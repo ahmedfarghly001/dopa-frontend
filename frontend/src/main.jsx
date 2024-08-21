@@ -5,7 +5,6 @@ import './index.css'
 import App from './App'
 createRoot(document.getElementById('root')).render(
   <div>
-    <Header/>
-    <Hero />
+    <App/>
   </div>
-)
+) 

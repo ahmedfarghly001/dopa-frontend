@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "questionText": "Q1: What’s the color of the car?",
+      "options": ["A. Red", "B. Black", "C. Abahor", "D. Green"],
+      "correctAnswer": "A. Red"
+    },
+    {
+      "questionText": "Q2: What’s the speed of the car?",
+      "options": ["A. 100mph", "B. 150mph", "C. 200mph", "D. 250mph"],
+      "correctAnswer": "C. 200mph"
+    },
+    {
+      "questionText": "Q3: What type of car is it?",
+      "options": ["A. Sedan", "B. SUV", "C. Convertible", "D. Coupe"],
+      "correctAnswer": "D. Coupe"
+    }
+  ]
+}
