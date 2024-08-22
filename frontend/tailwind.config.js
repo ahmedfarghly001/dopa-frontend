@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        teal: '#24A7A5'  // Adding custom color
+      },
       fontFamily: {
         sans: ['Franklin Gothic'],
       },
@@ -13,15 +16,15 @@ export default {
         '70/30': '70% 28%'
       },
       width: {
-        '128': '32rem',    // 512 pixels
-        '144': '36rem',    // 576 pixels
-        '160': '40rem',    // 640 pixels
-        '176': '44rem',    // 704 pixels
-        '192': '48rem',    // 768 pixels
-        '208': '52rem',    // 832 pixels
-        '224': '56rem',    // 896 pixels
-        '240': '60rem',    // 960 pixels
-        '256': '64rem',    // 1024 pixels
+        '128': '32rem',
+        '144': '36rem',
+        '160': '40rem',
+        '176': '44rem',
+        '192': '48rem',
+        '208': '52rem',
+        '224': '56rem',
+        '240': '60rem',
+        '256': '64rem',
       },
     },
   },

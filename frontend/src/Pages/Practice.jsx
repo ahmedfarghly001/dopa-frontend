@@ -22,7 +22,7 @@ const Practice = () => {
   ];
 
   return (
-    <div className="bg-black min-h-screen p-8 flex flex-col justify-between">
+    <div className="bg-black min-h-screen px-12 flex flex-col justify-between">
       <Navbar />
       <div className="flex-1  flex-col items-center justify-center space-y-6">
         {questions.map((item, index) => (
