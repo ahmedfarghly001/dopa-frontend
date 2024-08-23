@@ -12,7 +12,7 @@
     },
     {
       "questionText": "Q3: What type of car is it?",
-      "options": ["A. Sedan", "B. SUV", "C. Convertible", "D. Coupe"],
+      "options": ["A. Sedan", "B. SmmmUV", "C. Convertible", "D. Coupe"],
       "correctAnswer": "D. Coupe"
     }
   ]

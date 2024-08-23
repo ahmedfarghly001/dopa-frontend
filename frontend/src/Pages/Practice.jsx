@@ -34,7 +34,7 @@ const Practice = () => {
           />
         ))}
       </div>
-      <Footer />
+      <Footer buttonText="Go Back"  />
     </div>
   );
 };

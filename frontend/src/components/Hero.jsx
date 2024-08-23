@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="flex space-x-4">
             <button 
               onClick={() => handleButtonClick("Practice content here")}
-              className="bg-teal-500 text-white py-3 px-10 rounded-md hover:bg-teal-600 text-2xl font-semibold"
+              className="bg-teal text-white py-3 px-10 rounded-md hover:bg-teal-600 text-2xl font-semibold"
             >
               Practice
             </button>
@@ -29,7 +29,7 @@ const Hero = () => {
               onClick={() => handleButtonClick("Exam content here")}
               className="bg-red-500 text-white py-3 px-10 rounded-md hover:bg-red-600 text-2xl font-semibold"
             >
-              Exam
+                Exam 
             </button>
           </div>
         </div>
