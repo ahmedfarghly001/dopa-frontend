@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -7,10 +6,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        teal: '#24A7A5'  // Adding custom color
+        teal: '#24A7A5'
       },
       fontFamily: {
         sans: ['Franklin Gothic'],
+      },
+      fontWeight: {
+        normal: 400,
+        semibold: 600,  // Ensure this matches what you expect for 'semi-bold'
+        bold: 700
       },
       gridTemplateColumns: {
         '70/30': '70% 28%'

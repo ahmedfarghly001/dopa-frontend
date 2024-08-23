@@ -1,17 +1,14 @@
-import React from 'react'
+import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 
 const HomePage = () => {
-  return <>
-  <Header/>
-  <Hero/>
-  </>
+  return (
+    <div className="bg-black text-white min-h-screen">
+      <Header />
+      <Hero />
+    </div>
+  );
+};
 
-
-}
-
-
-
-
-export default HomePage
+export default HomePage;

@@ -1,4 +1,3 @@
-// Hero.jsx
 import React, { useState } from 'react';
 import { Illust } from './illust';
 import Popup from './Popup';  // Importing the Popup component
@@ -13,11 +12,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-black text-white py-24">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">  
-        <div className="md:w-1/2 lg:w-2/5 flex flex-col items-start ml-auto"> 
+    <section className="bg-black text-white py-12">  
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <div className="md:w-1/2 lg:w-2/5 flex flex-col items-start ml-24">
           <h1 className="text-6xl font-bold mb-6">Welcome Doctor,</h1>
-          <p className="text-xl mb-10">we are here to enhance your studying journey</p>
+          <p className="text-xl font-semibold mb-10">we are here to enhance your studying journey</p> 
           <div className="flex space-x-4">
             <button 
               onClick={() => handleButtonClick("Practice content here")}

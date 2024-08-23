@@ -4,7 +4,7 @@ const SvgComponent = (props) => (
   <svg
     width={489}
     height={489}
-    viewBox="0 0 489 489"
+    viewBox="-20 -20 550 550"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
@@ -234,7 +234,7 @@ const SvgComponent = (props) => (
           fill="white"
         />
       </motion.g>
-      {/*<motion.g id="book"
+      {<motion.g id="book"
                       animate={{ y: [-8, 8, -8] }}
                       transition={{
                         times: [0, 0.5, 1],
@@ -379,7 +379,7 @@ const SvgComponent = (props) => (
           d="M302.205 91.1182C301.965 91.1182 301.741 90.9715 301.653 90.734L298.714 82.8935C298.599 82.5894 298.754 82.2479 299.061 82.1332C299.362 82.0184 299.706 82.1732 299.821 82.48L302.759 90.3205C302.874 90.6247 302.719 90.9661 302.413 91.0808C302.343 91.1049 302.274 91.1182 302.205 91.1182Z"
           fill="white"
         />
-      </motion.g>*/}
+      </motion.g>}
       <motion.g id="file"
                       animate={{ y: [-8, 8, -8] }}
                       transition={{
@@ -523,7 +523,7 @@ const SvgComponent = (props) => (
           fill="white"
         />
       </motion.g>
-    {/*  <motion.g id="clock"
+    {  <motion.g id="clock"
                       animate={{ y: [-8, 8, -8] }}
                       transition={{
                         times: [0, 0.5, 1],
@@ -613,7 +613,7 @@ const SvgComponent = (props) => (
           d="M132.435 9.47678C132.344 10.7093 131.275 11.6297 130.051 11.5363C128.824 11.4403 127.904 10.3651 127.997 9.13264C128.088 7.90013 129.157 6.97975 130.381 7.07312C131.605 7.16916 132.525 8.24427 132.435 9.47678Z"
           fill="white"
         />
-      </motion.g> */}
+      </motion.g>}
       <motion.g id="extra"
                       animate={{ y: [-8, 8, -8] }}
                       transition={{
