@@ -1,17 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import QuestionCardExam from '../components/QuestionCardExam';
 import Footer from '../components/Footer';
 
 const ExamPage = () => {
   const questions = [
-    // Your ten questions
-    { questionText: "Q1: What’s the color of the car?", options: ["A. Red", "B. Black", "C. Blue", "D. Green"], correctAnswer: "A. Red" },
-    { questionText: "Q2: What’s the speed of the car?", options: ["A. 100mph", "B. 150mph", "C. 200mph", "D. 250mph"], correctAnswer: "C. 200mph" },
+    { questionText: "What is the capital of France?", options: ["Paris", "London", "Berlin", "Rome"], correctAnswer: "Paris" },
+    { questionText: "What is the largest planet in our solar system?", options: ["Mars", "Jupiter", "Earth", "Saturn"], correctAnswer: "Jupiter" },
+    { questionText: "What year did the Titanic sink?", options: ["1912", "1905", "1898", "1923"], correctAnswer: "1912" }
   ];
 
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(''));
   const [submitClicked, setSubmitClicked] = useState(false);
+  const [score, setScore] = useState(0); // To store the score after submission
+  const [timer, setTimer] = useState(300); // Timer set for 5 minutes (300 seconds)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer(prevTimer => {
+        if (prevTimer === 1) {
+          handleSubmit();
+          clearInterval(interval);
+          return 0;
+        }
+        return prevTimer - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleOptionChange = (index, option) => {
     const newAnswers = [...userAnswers];
@@ -21,13 +38,14 @@ const ExamPage = () => {
 
   const handleSubmit = () => {
     setSubmitClicked(true);
-    let score = 0;
+    let newScore = 0;
     questions.forEach((question, index) => {
       if (question.correctAnswer === userAnswers[index]) {
-        score += 1;
+        newScore += 1;
       }
     });
-    console.log(`Score: ${score}`);
+    setScore(newScore);
+    console.log(`Score: ${newScore}`); // Optionally log the score
   };
 
   const isCorrect = (index, option) => questions[index].correctAnswer === option;
@@ -36,6 +54,11 @@ const ExamPage = () => {
     <div className="bg-black min-h-screen px-12 flex flex-col justify-between">
       <Navbar />
       <div className="flex-1 flex-col items-center justify-center space-y-6">
+        {submitClicked && (
+          <div className="text-white text-lg font-bold">
+            You got {score} out of {questions.length} correct!
+          </div>
+        )}
         {questions.map((item, index) => (
           <QuestionCardExam
             key={index}
@@ -48,7 +71,9 @@ const ExamPage = () => {
           />
         ))}
       </div>
-      <Footer buttonText="Submit" onClick={handleSubmit} />
+      {!submitClicked && (
+        <Footer buttonText="Submit" onClick={handleSubmit} />
+      )}
     </div>
   );
 };

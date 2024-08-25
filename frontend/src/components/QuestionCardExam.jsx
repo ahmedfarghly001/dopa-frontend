@@ -6,11 +6,14 @@ const QuestionCardExam = ({ question, options, selectedOption, onOptionChange, i
         <button
           key={index}
           className={`w-full text-left py-2 px-4 mb-2 rounded ${
-            submitClicked 
-              ? (isCorrect(option) ? 'bg-green-500' : 'hover:bg-gray-700')  // After submit: color only correct option green
-              : (selectedOption === option ? 'bg-blue-500' : 'hover:bg-gray-700')  // Before submit: color selected option blue
+            submitClicked
+              ? (isCorrect(option)
+                  ? 'bg-green-500'
+                  : (selectedOption === option ? 'bg-red-500' : 'hover:bg-gray-700'))
+              : (selectedOption === option ? 'bg-blue-500' : 'hover:bg-gray-700')
           } text-white`}
           onClick={() => onOptionChange(option)}
+          disabled={submitClicked}
         >
           {option}
         </button>
