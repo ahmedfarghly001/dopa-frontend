@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; 
 import Navbar from '../components/Navbar';
 import QuestionCardExam from '../components/QuestionCardExam';
 import Footer from '../components/Footer';
@@ -12,23 +12,25 @@ const ExamPage = () => {
 
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(''));
   const [submitClicked, setSubmitClicked] = useState(false);
-  const [score, setScore] = useState(0); // To store the score after submission
+  const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(300); // Timer set for 5 minutes (300 seconds)
+  const timerRef = useRef(null); // Using useRef to hold the interval ID
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer(prevTimer => {
-        if (prevTimer === 1) {
-          handleSubmit();
-          clearInterval(interval);
-          return 0;
-        }
-        return prevTimer - 1;
-      });
-    }, 1000);
+    if (!submitClicked) { // Only start the timer if submit has not been clicked
+      timerRef.current = setInterval(() => {
+        setTimer(prevTimer => {
+          if (prevTimer === 1) {
+            handleSubmit();
+            return 0;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
+    }
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(timerRef.current); // Clean up the interval on component unmount
+  }, [submitClicked]); // Reactivate the effect when submitClicked changes
 
   const handleOptionChange = (index, option) => {
     const newAnswers = [...userAnswers];
@@ -37,6 +39,7 @@ const ExamPage = () => {
   };
 
   const handleSubmit = () => {
+    clearInterval(timerRef.current); // Clear the interval when submitting
     setSubmitClicked(true);
     let newScore = 0;
     questions.forEach((question, index) => {
@@ -45,7 +48,6 @@ const ExamPage = () => {
       }
     });
     setScore(newScore);
-    console.log(`Score: ${newScore}`); // Optionally log the score
   };
 
   const isCorrect = (index, option) => questions[index].correctAnswer === option;
