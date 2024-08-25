@@ -11,7 +11,7 @@ import Practice from './Pages/Practice'
 import ExamPage from './Pages/ExamPage'
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route index element={<HomePage/>}/>)
+  createRoutesFromElements(<Route index element={<ExamPage/>}/>)
 );
 
 const App = ()=>{
