@@ -50,6 +50,8 @@ const ExamPage = () => {
     setScore(newScore);
   };
 
+  //some change from saad
+
   const isCorrect = (index, option) => questions[index].correctAnswer === option;
 
   return (
