@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Illust } from './illust';
 import Popup from './Popup';  // Importing the Popup component
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -16,7 +17,7 @@ const Hero = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 lg:w-2/5 flex flex-col items-start ml-24">
           <h1 className="text-6xl font-bold mb-6">Welcome Doctor,</h1>
-          <p className="text-xl font-semibold mb-10">we are here to enhance your studying journey</p> 
+          <p className="text-xl font-semibold mb-10">we are here to enhance your studying journey</p>
           <div className="flex space-x-4">
             <button 
               onClick={() => handleButtonClick("Practice content here")}
@@ -36,7 +37,7 @@ const Hero = () => {
           <Illust/>
         </div>
       </div>
-      {showPopup && <Popup onClose={() => setShowPopup(false)}>{popupContent}</Popup>}
+      {showPopup && <Popup onClose={() => setShowPopup(false)} content={popupContent}/>}
     </section>
   );
 };
