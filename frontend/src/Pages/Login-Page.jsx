@@ -1,6 +1,6 @@
 // Import React and useState for managing state
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const LoginPage = () => {
   // State to manage focus for username and password inputs
   const [isUsernameFocused, setUsernameFocused] = useState(false);
@@ -37,7 +37,10 @@ const LoginPage = () => {
               type="submit" 
               className="w-full bg-teal hover:bg-teal-800 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline"
             >
+              <Link to="/">
               Login
+              </Link>
+              
             </button>
           </form>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   // State to manage the countdown timer and pop-up visibility
   const [timer, setTimer] = useState(300); // 300 seconds (5 minutes)
@@ -40,7 +40,7 @@ const Navbar = () => {
             <div className="border-2 border-white rounded px-3 py-1 text-lg mr-4">
               {formatTime(timer)}
             </div>
-            <a href="#signout" className="text-2xl font-medium hover:text-gray-400">Sign out</a>
+            <Link to="/Login-Page"  className="text-2xl font-medium hover:text-gray-400">Sign out</Link>
           </div>
         </div>
       </header>

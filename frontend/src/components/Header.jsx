@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className="bg-black text-white py-7">
@@ -12,7 +12,7 @@ const Header = () => {
             <a href="#about" className="hover:text-gray-400">About</a>
             <div className="w-144 h-2 bg-white rounded-full mt-3"></div>
             <div className="ml-10">
-              <a href="#signout" className="hover:text-gray-400">Sign out</a>
+              <Link to="/Login-Page" className="hover:text-gray-400">Sign out</Link>
             </div>
           </nav>
         </div>
