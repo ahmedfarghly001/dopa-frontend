@@ -1,11 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 const Popup = ({ onClose, content }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center px-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-black" h-64>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-black">
         {/* Navbar with close button */}
         <nav className="flex justify-between items-center mb-8">
           <span className="font-bold text-lg">Choose your subject</span>

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Illust } from './illust';
 import Popup from './Popup';  // Importing the Popup component
-import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [showPopup, setShowPopup] = useState(false);

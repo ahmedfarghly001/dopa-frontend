@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const QuestionCard = ({ question, options, correctAnswer }) => {
   const [showAnswer, setShowAnswer] = useState(false);
