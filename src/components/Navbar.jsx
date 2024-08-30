@@ -34,7 +34,7 @@ const Navbar = () => {
       <header className="bg-black text-white py-4">  {/* Reduced the vertical padding */}
         <div className="container mx-auto flex justify-between items-baseline px-10 pl-24">
           <div className="flex items-center space-x-16">
-            <img src="./assets/vertical.png" alt="Logo" className="h-16" />
+            <img src="/vertical.png" alt="Logo" className="h-16" />
           </div>
           <div className="flex items-center" style={{ marginTop: '-8px' }}>  {/* Added negative margin-top */}
             <div className="border-2 border-white rounded px-3 py-1 text-lg mr-4">

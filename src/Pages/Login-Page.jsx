@@ -61,7 +61,7 @@ const LoginPage = () => {
       <div className="border-2 border-white p-12 rounded-lg w-full max-w-sm">
         <div className="flex flex-col items-center">
           <div className="mb-8">
-            <img src="./assets/vertical.png" alt="Dopa Logo" className="h-16" />
+            <img src="/vertical.png" alt="Dopa Logo" className="h-16" />
           </div>
           <h1 className="text-white text-xl mb-8">Welcome back</h1>
           {error && <p className="text-red-500 mb-4">{error}</p>}
