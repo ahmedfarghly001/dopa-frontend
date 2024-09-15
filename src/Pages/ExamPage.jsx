@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import QuestionCardExam from '../components/QuestionCardExam';
 import Footer from '../components/Footer';
 import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "../firebase_config"; // Ensure your Firebase config is correctly imported
+import { firestore } from "../firebase_config";
 
 const ExamPage = () => {
   const [questions, setQuestions] = useState([]);
@@ -11,7 +11,7 @@ const ExamPage = () => {
   const [submitClicked, setSubmitClicked] = useState(false);
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(300); // Timer set for 5 minutes (300 seconds)
-  const timerRef = useRef(null); // Using useRef to hold the interval ID
+  const timerRef = useRef(null);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -23,10 +23,15 @@ const ExamPage = () => {
             question.choices && 
             question.choices.length === 4 && 
             question.choices.some(choice => choice.isCorrect)
-          ); // Filter out invalid questions
+          );
 
-        setQuestions(fetchedQuestions);
-        setUserAnswers(Array(fetchedQuestions.length).fill('')); // Initialize user answers based on fetched questions
+        // Randomly shuffle the questions and select 20
+        const randomQuestions = fetchedQuestions
+          .sort(() => 0.5 - Math.random()) // Shuffle the array
+          .slice(0, 20); // Take the first 20 questions after shuffling
+
+        setQuestions(randomQuestions);
+        setUserAnswers(Array(randomQuestions.length).fill('')); // Initialize user answers based on selected questions
       } catch (error) {
         console.error("Error fetching questions from Firestore:", error);
       }
@@ -36,7 +41,7 @@ const ExamPage = () => {
   }, []);
 
   useEffect(() => {
-    if (!submitClicked) { // Only start the timer if submit has not been clicked
+    if (!submitClicked) {
       timerRef.current = setInterval(() => {
         setTimer(prevTimer => {
           if (prevTimer === 1) {
@@ -49,7 +54,7 @@ const ExamPage = () => {
     }
 
     return () => clearInterval(timerRef.current); // Clean up the interval on component unmount
-  }, [submitClicked]); // Reactivate the effect when submitClicked changes
+  }, [submitClicked]);
 
   const handleOptionChange = (index, option) => {
     const newAnswers = [...userAnswers];
